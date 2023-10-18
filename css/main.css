@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,800&display=swap');
+
+:root{
+    --box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --border-radius: 0.35rem;
+} 
+
+html{
+    box-sizing: border-box;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+body{
+    --color-bg: #ecebeb;
+    --color-bg-secondary: #ffffff;
+    --color-text: #000;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg)
+}
+
+body.dark-mode{
+    --color-bg: #212E37;
+    --color-bg-secondary: #2B3743;
+    --color-text: #fff;
+}
+
+.container{
+    margin: 0 auto;
+    width: 80%;
+}
+
+.img-fluid{
+    width: 100%;
+}
+
+.img-detalles{
+    width: 100%;
+    height: 100%;
+}
+
+/* Espaciados */
+.my-2{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Navbar */
+.navbar{
+    background-color: var(--color-bg-secondary);
+    box-shadow: var(--box-shadow);
+}
+
+.navbar-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-dark-mode{
+    background-color: var(--color-bg-secondary);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.3s;
+    color: var(--color-text);
+}
+
+.btn-dark-mode:hover{
+    opacity: 0.6;
+}
+
+/* Filtros */
+.filter-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-search{
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    background-color: var(--color-bg-secondary);
+    padding: 1rem;
+}
+
+.form-search i{
+    opacity: 0.5;
+}
+
+.form-search input{
+    border: none;
+    outline: none;
+    margin-left: 1rem;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text);
+}
+
+/* Main */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.card{
+    overflow: hidden;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.card img{
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.card-content{
+    padding: 2rem;
+}
+
+.card-content h3{
+    margin-bottom: 2rem;
+}
+
+.enlace{
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: bold;
+    font-style: italic;
+    border: 2px solid var(--color-text);
+    border-radius: 5px;
+    padding: 10px 30px;
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+    transition: all 3ms ease;
+}
+
+.enlace:hover{
+    background-color: var(--color-text);
+    color: var(--color-bg);
+}
+
+.container-img{
+    width: 500px;
+}
+
+.pais{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-bg);
+    box-shadow: none;
+}
+
+.detalle-content{
+    width: 45%;
+    padding: 20px;
+}
+
+.detalle-content h3{
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 90px;
+    height: 200px;
+}
+
+.info p{
+    margin: 5px 0;
+}
+
+@media (max-width: 1044px){
+    .container-img {
+        width: 400px;
+    }
+
+    .detalle-content{
+        width: 50%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .container-img{
+        width: 350px;
+    }
+
+    .info{
+        column-gap: 30px;
+    }
+    
+    .pais{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detalle-content{
+        width: 70%;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar-content{
+        font-size: 0.6rem;
+    }
+
+    .filter-content{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-search{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .form-search input{
+        width: 85%;
+    }
+    
+    .info{
+        grid-template-columns: repeat(1, 1fr);
+        height: 90%;
+    }
+
+    .detalle-content{
+        height: 70vh;
+    }
+
+    .grid{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
